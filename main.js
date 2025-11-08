@@ -1,23 +1,27 @@
-const plus = document.querySelector('#plus')
-const minus = document.querySelector('#minus')
-const div = document.querySelector('#schots')
-let counter = 0
-plus.addEventListener('click', qoshish)
-minus.addEventListener('click', ayirish)
+const inpt = document.querySelector("#ipt");
+const input = document.querySelector("#iput");
+const btn = document.querySelector('#plus')
+const math = document.querySelector('#math')
 
-function qoshish(){
-    counter++
-    const item = document.createElement('p')
-    item.classList.add('son')
-    div.appendChild(item)
-    item.textContent = counter
+btn.addEventListener('click', summ)
+
+function summ(){
+    const item1 = Number(inpt.value)
+    const item2 = Number(input.value)
+    const result = item1 + item2
+    if(result>0){
+        const h1 = document.createElement('h1')
+        h1.textContent = result
+        h1.classList.add('yigindi');
+        math.appendChild(h1)
+        math.classList.remove('hidden')
+        console.log(result);
+    }
+    else{
+        math.classList.add('hidden')
+    }
 }
 
-function ayirish(){
-    const deleteCount = document.createElement("h1")
-    deleteCount.textContent = "Tozalandi"
-    div.appendChild(deleteCount)
-}
 
 
 
@@ -37,10 +41,20 @@ function ayirish(){
 
 
 
+// const p = document.querySelector('#p')
+// btn.addEventListener('click', yoq)
 
+// function yoq(){
+//     p.classList.toggle('hidden')
+// }
 
-// const inpt = document.querySelector("#ipt");
-// const div = document.querySelector('#ota')
+// const div = document.querySelector('#boxes')
+// div.addEventListener('click', rang)
+
+// function rang(){
+//     div.style.background = `rgb(${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)})`;
+// }
+
 // function yechim(){
 //     const item = document.createElement('li')
 //     item.classList.add("ul-item")
